@@ -33,13 +33,6 @@ function getPosition(position) {
     mymap.setView([position.coords.latitude,position.coords.longitude],20);
 }
 
-
-//the reference of this function is in the tutorial of this module
-function replaceGraphs(){
-    document.getElementById("graphdiv").innerHTML ="<img src='images/ucl.png'>"
-    scrollto('contactme');
-}
-
 //create a variable for each of the layer we want to load/remove
 //create a variable that will hold the XMLHttpRequest() - this must be done outside a function so that all the functions can use the some varaible
 var client;
