@@ -28,7 +28,6 @@ function QuestionSubmittion(){
     var optionB = document.getElementById("QuestionOptionB").value;
     var optionC = document.getElementById("QuestionOptionC").value;
     var optionD = document.getElementById("QuestionOptionD").value;
-    alert(title + " "+ question_content + " "+optionA+ " "+optionB+ " "+optionC+ " "+optionD+ " "+LatLong + " "+TrueAnswer+ " "+user_email);  
     var postString = "title="+title +"&question_content="+question_content+"&optionA="+optionA+"&optionB="+optionB+"&optionC="+optionC+"&optionD="+optionD
     +"&optiontrueA="+TrueAnswer[0]+"&optiontrueB="+TrueAnswer[1]+"&optiontrueC="+TrueAnswer[2]+"&optiontrueD="+TrueAnswer[3]+"&lat="+lng+"&lng="+lat+"&user_email="+user_email;
     processData(postString);

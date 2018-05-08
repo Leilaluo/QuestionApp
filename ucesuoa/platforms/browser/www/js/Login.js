@@ -9,8 +9,6 @@ function QuestionApp_user_Login(){
     var postString = "register_email="+register_email +"&register_pass="+register_pass;
     processData(postString);
 
-    
-//    alert("lalala",b);
     }
 }
 
@@ -19,7 +17,6 @@ var client;
 
 function processData(postString) {
  client = new XMLHttpRequest();
- alert("stage 1");
  client.open('POST','http://developer.cege.ucl.ac.uk:30265/QuestionAppLogin',true);
  client.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
  client.onreadystatechange = dataUploaded; 

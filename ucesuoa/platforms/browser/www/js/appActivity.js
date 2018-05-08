@@ -12,16 +12,16 @@ function getemailfrom_URL(){
             obj[strs[i].split("=")[0]]=unescape(strs[ i].split("=")[1]);
         }
 }
-//change the email name of the user in the index
-document.getElementById("span_user_email").textContent = obj.email;
-return obj.email;
+
+    return obj.email;
 }
 //user_email store the email of this user
 var user_email = getemailfrom_URL()
-
+//change the email name of the user in the index
+document.getElementById("span_user_email").innerHTML = user_email;
 // function getLocation and getPosition are all based on the reference from the the tutorial of this module.
 function getLocation() {
-    alert('getting location');
+    alert('Getting location...');
     navigator.geolocation.getCurrentPosition(getPosition);
 }
 
@@ -97,9 +97,7 @@ function loadLayer(geoJSONData){
                         return L.marker(latlng,{icon:testMarkerRed}).bindPopup("<dt>I am your question :) </dt>"+"<dt>Title: </dt>"+feature.properties.title
                             +"<dt>Question content: </dt>"+ feature.properties.question_content+"<dt></dt>");
                     }
-                    else{
-                        alert("You are not log in yet!");
-                    }
+                    
                 }
         }).addTo(mymap)
         mymap.fitBounds(questionlayer.getBounds());

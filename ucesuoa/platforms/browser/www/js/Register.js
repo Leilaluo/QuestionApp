@@ -3,7 +3,6 @@ function user_register(){
     var register_email = document.getElementById("register_email").value;
     var register_pass = document.getElementById("register_pass").value;
     var register_username = document.getElementById("register_username").value;
-    alert(register_email + " "+ register_pass + " "+register_username);  
     var postString = "register_email="+register_email +"&register_pass="+register_pass+"&register_username="+register_username;
     processData(postString);
 }
@@ -26,7 +25,7 @@ function dataUploaded() {
     document.getElementById("dataUploadResult").innerHTML = client.responseText;
     url= "index.html?email="+escape(document.getElementById("register_email").value);
     alert("Successful registered!");
-    alert("useremail:"+document.getElementById("register_email").value);
+    alert("useremail: "+document.getElementById("register_email").value);
     window.location.href = url;
  }
 }
