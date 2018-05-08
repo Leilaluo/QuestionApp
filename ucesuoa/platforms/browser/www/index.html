@@ -1,0 +1,222 @@
+<!doctype html>
+<!--the templete of index is from material design, this page also used the reference from the tutorial of this module-->
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+     <style type="text/css"> 
+        #mapid { height: 180px; }
+    </style>
+    <style type="text/css"> 
+        #basicmapid { height: 180px; }
+    </style>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
+   integrity="sha512wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+   crossorigin=""/>
+     <link rel = "stylesheet" href="ionicons.min.css">
+     <link rel = "stylesheet" href="leaflet.awesome-markers.css">
+   
+<!--   //script src is related to js language-->
+   <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+   integrity="sha512mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+   crossorigin="">
+   </script>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="js/appActivity.js"></script>
+    <script src="leaflet.awesome-markers.js"></script>
+    <script src="js/AddQuestion.js"></script>
+    
+    <!-- // reference from mapbox -->
+<!--    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />-->
+
+    
+    <!--// reference from draw plugin--> 
+<!--    <link rel='stylesheet' href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' />
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>-->
+
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Home</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item" onclick = "replaceGraphs()">Contact</li>
+          </ul>
+        </div>
+      </header>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="images/user.jpg" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span id = "span_user_email">Not Log In Yet</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                <li class="mdl-menu__item" onclick="changetoLogin()">Log out</li>
+              <li class="mdl-menu__item" onclick = "changetoLogin()">Change the account</li>
+              <!--<li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>-->
+            </ul>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" onclick="scrollto('help_information');"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Help</a>
+          <a class="mdl-navigation__link" onclick="addPointonMap()"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Add Point on the Map</a>
+          <a class="mdl-navigation__link" onclick="addQuestion()"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Add a Question on Your Chosen Point</a>
+          <a class="mdl-navigation__link" onclick="getLocation()"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Get your location</a>
+          <a class="mdl-navigation__link" onclick="getData('question_map')"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation" >inbox</i>Get All Your Questions on Map</a>
+          <a class="mdl-navigation__link" onclick="removeData('questionlayer')"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Remove All Your Questions on Map</a>
+          <a class="mdl-navigation__link" href="" onclick = "changetoLogin();return false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Change the account</a>
+          <a class="mdl-navigation__link" href="" onclick = "changetoLogin();return false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Log out</a>
+        </nav>
+      </div>
+        
+        <main class="mdl-layout__content mdl-color--grey-100">
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+              <div id="mapid" style = "width:100%;height:400px;"></div> 
+          </div>
+            <!--the following two switch options is for open and remove the user's questions layer-->
+            <div style="padding-left: 1%;">
+            <table cellpadding="10">
+                <tr>
+                    <td>Open your Questions Layer</td>
+                    <td>
+                        <label class = "mdl-switch mdl-js-switch mdl-js-ripple-effect" 
+                        for = "switch-eq">
+                        <input type = "checkbox" id = "switch-eq" 
+                            class = "mdl-switch__input" onClick="eqChanged(this);">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+          </div>
+
+    <!-- the following script will load the map and set the default view and zoom, as well as loading the 
+basemap tiles -->
+    <script>
+        //load the map
+        var mymap = L.map('mapid').setView([51.505,-0.09],13);
+        //load the tiles(this is the base map of your area)
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            //the attribution is the copy right(reference) of this base map
+            attribution: 'Map data &copy; <a\href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'mapbox.streets'
+        }).addTo(mymap);
+        
+        var testMarkerRed = L.AwesomeMarkers.icon({
+            icon: 'play',
+            markerColor: 'red'
+        });
+        
+        var testMarkerPink = L.AwesomeMarkers.icon({
+            icon: 'play',
+            markerColor: 'pink'
+        });
+        
+       
+    </script>
+	<div  id="contactme" class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" >
+            <div id = "div1">
+                <p>Contact Information:</p>
+                <p>CEGEG077 module</p>
+                <p>Contact with me: leilaluooo@gmail.com</p>
+            
+            </div>
+            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid"  id="graphdiv">
+             
+        </div>
+        </div>
+        <!--the div of help user to know how to use this application--> 
+        <div  id="help_information" class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" >
+                <p>Help Information:</p>
+                <p>CEGEG077 module</p>
+                <p>Contact with me: leilaluooo@gmail.com</p>
+
+             
+        </div>
+      </main>
+
+    </div>
+      
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="js/AddQuestion.js"></script>
+    <script src="js/appActivity.js"></script>
+  </body>
+</html>

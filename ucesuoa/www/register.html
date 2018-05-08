@@ -1,0 +1,98 @@
+<!--This is the page for users in question app to register -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>question app register</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <!--<link href="css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>-->
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.idealforms.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <meta name="mobileadaption" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+  </head>
+	<body>
+		<div class="wrap login_wrap">
+				<div class="login_box">	
+					<div class="login_form">
+                                                <!--the title of the register form-->
+						<div class="login_title">
+							QUESTION APP REGISTER
+						</div>
+                                                <!--this is the register form-->
+						<form action="#" method="post" id ="register-form">
+							
+							<div class="form_text_ipt">
+								<input id="register_email" data-ideal="required email" type="email" name="email" placeholder="email">
+							</div>
+							<div class="form_text_ipt">
+								<input id="register_pass" name="password" type="password" placeholder="password">
+							</div>
+							<div class="form_text_ipt">
+                                                                <input id="register_username" name="username" placeholder="username" type="text"/>
+							</div>
+                                                    
+							
+							<div class="form_btn">
+                                                                <!--click on this button then it will start the register data upload, this function is in register.js-->
+								<button type="button" onclick="user_register()">Register</button>
+							</div>
+							<div class="form_reg_btn">
+                                                                <!--change to log in page-->
+								<span>Already have an account?</span><a href="login.html">LOG IN</a>
+							</div>
+						</form>
+						<div class="other_login">
+                                                        <!--this is the div to show the result of the upload-->
+							 <div id="dataUploadResult">The result of the upload goes here</div>
+						</div>
+                                              
+                                               
+
+					</div>
+				</div>
+                </div>
+
+		<div style="text-align:center;"></div>
+                
+<!-- the following part uses the reference from this website: http://elclanrs.github.com/jq-idealforms/--> 
+<script type="text/javascript">
+var options = {
+
+	onFail: function(){
+		alert( $register_form.getInvalid().length +' invalid fields.' )
+	},
+
+	inputs: {
+		'password': {
+			filters: 'required pass',
+		},
+		'username': {
+			filters: 'required username',
+			data: {
+			}
+		},
+        }
+	
+};
+
+var $register_form = $('#register-form').idealforms(options).data('idealforms');
+
+$('#reset').click(function(){
+	$register_form.reset().fresh().focusFirst()
+});
+
+$register_form.focusFirst();
+
+
+
+
+</script>
+<script type="text/javascript" src="js/Register.js" ></script>
+
+</body>
+</html>

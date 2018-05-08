@@ -1,0 +1,48 @@
+<!--This is the page for users in question app to log in -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>question app log in</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+    <script type="text/javascript" src="js/Login.js" ></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="mobileadaption" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+  </head>
+  <body>
+                <div class="wrap login_wrap">
+				<div class="login_box">	
+                                                <!--the title of the login form-->
+						<div class="login_title">
+							QUESTION APP LOG IN
+						</div>
+                                                <!--this is the login form-->
+						<form action="#" method="post">
+							<div class="form_text_ipt">
+								<input id = "login_email" name="username" type="text" placeholder="email">
+							</div>
+							<div class="form_text_ipt">
+								<input id = "login_password" name="password" type="password" placeholder="password">
+							</div>
+                                                          
+							<div class="form_btn">
+                                                                <!--click on this button then it will start the Account verification, this function is in login.js-->
+								<button type="button" onclick="QuestionApp_user_Login()">Login</button>
+							</div>
+							<div class="form_reg_btn">
+                                                                <!--change to register page-->
+								<span>Don't have an account yet?</span><a href="register.html">  Register</a>
+							</div>
+						</form>
+                                                <div class="other_login">
+                                                        <!--this is the div to show the result of the verification-->
+							 <div id="dataUploadResult">The result of the upload goes here</div>
+						</div>
+
+					</div>
+			</div> 
+      
+  </body>
+</html>

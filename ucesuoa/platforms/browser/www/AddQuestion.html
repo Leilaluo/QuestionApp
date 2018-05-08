@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz App add your Question</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <!--<link href="css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>-->
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.idealforms.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /> 
+  </head>
+	<body>
+		<div class="wrap Question_wrap">
+				
+				<!--<div class="Question_box">-->	
+					
+					<div class="login_form">
+						<div class="Question_title">
+							Add One Question
+						</div>
+						<form action="#" method="post">
+							
+							<div class="form_QuestionTitle_ipt">
+								<input id="QuestionTitle" class = "QuestionTitle" placeholder="Question Title">
+                                                                
+							</div>
+                                                    
+                                                        <div class="form_QuestionTitle_ipt">
+								<input id="QuestionContent"  class = "QuestionTitle" placeholder="Question Content">
+                                                                
+							</div>
+                                                    
+                                                        <div class="form_QuestionTitle_ipt">
+								<input id="QuestionOptionA"  class = "QuestionOption" placeholder="Option A">
+                                                                <input id="checkbox1" type="checkbox" value="A"/>
+							</div>
+                                                    
+                                                        <div class="form_QuestionTitle_ipt">
+								<input id="QuestionOptionB"  class = "QuestionOption" placeholder="Option B">
+                                                                <input id="checkbox2" type="checkbox" value="B"/>
+							</div>
+                                                    
+                                                        <div class="form_QuestionTitle_ipt">
+								<input id="QuestionOptionC"  class = "QuestionOption" placeholder="Option C">
+                                                                <input id="checkbox3" type="checkbox" value="C"/>
+							</div>
+                                                    
+                                                        <div class="form_QuestionTitle_ipt">
+								<input id="QuestionOptionD"  class = "QuestionOption" placeholder="Option D">
+                                                                <input id="checkbox4" type="checkbox" value="D"/>
+							</div>
+                                                        
+                                                        
+                                                        <div class="form_btn">
+								<button type="button" onclick = "QuestionSubmittion()">Submit</button>
+							</div>
+					
+							<div class="form_reg_btn">
+								<span>Go Back to the Index</span><a onclick = "gobacktoindex()">  Index</a>
+							</div>
+						</form>
+                                            <div id="dataUploadResult">The result of the upload goes here</div>
+
+					</div>
+				</div>
+                <!--</div>-->
+
+		<div style="text-align:center;"></div>
+<script type="text/javascript" src="js/AddQuestion.js" ></script>
+</body>
+    
+</html>
