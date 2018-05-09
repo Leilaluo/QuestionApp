@@ -4,10 +4,15 @@ The Question App of Assignment of CEGEG 077
 The main functions in quiz app in this projects are “User Login”, “User Register”, “Add Point on the Map”,  “Get your location“, “Add a Question on Your Chosen Point“, “Get All Your Questions on Map”, “Remove All Your Questions on Map“, “Contact Us” and “Help”. The httpServer_Questionapp.js serve this application.
 
 The URLs of the websites in this application are as following:
+
 http://developer.cege.ucl.ac.uk:31265/
+
 http://developer.cege.ucl.ac.uk:31265/index.html
+
 http://developer.cege.ucl.ac.uk:31265/login.html
+
 http://developer.cege.ucl.ac.uk:31265/register.html
+
 http://developer.cege.ucl.ac.uk:31265/AddQuestion.html
 
 Function: 
