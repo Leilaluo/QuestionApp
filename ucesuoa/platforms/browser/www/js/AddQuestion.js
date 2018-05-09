@@ -1,4 +1,4 @@
-
+//function getvaluefrom_URL get the user email information from the URL as when user login, their index urls will have their email information(eg: http://developer.cege.ucl.ac.uk:31265?email=cege@gmail.com)
 function getvaluefrom_URL(){
     var url=location.search,obj={};
 
@@ -13,8 +13,11 @@ function getvaluefrom_URL(){
 }
 return [obj.latlong,obj.email];
 }
+//the email of user will be stored in the global variable
 var user_email = getvaluefrom_URL()[1];
 
+//function QuestionSubmittion,processData,dataUploaded are adapted from the tutorial of this module
+//These functions allow user to submit their question with coordinates information.
 function QuestionSubmittion(){
     alert ("Start Data Upload!");
     var LatLong = getvaluefrom_URL()[0];
@@ -28,6 +31,10 @@ function QuestionSubmittion(){
     var optionB = document.getElementById("QuestionOptionB").value;
     var optionC = document.getElementById("QuestionOptionC").value;
     var optionD = document.getElementById("QuestionOptionD").value;
+    //the values which will be uploaded into the question table are title,question_content,optionA,optionB,optionC,optionD,optiontrueA,optiontrueB,optiontrueC,optiontrueD,lat,lng and user_email
+    //optionA,B,C,D are the answers set by the user, optiontrueA,optiontrueB,optiontrueC,optiontrueD are bool values which represent the respective answers are correct or not.
+    //lat and lng are latitude and longtitude of this question location which are transformed by url thorough different pages (eg: http://developer.cege.ucl.ac.uk:31265?lat=323&lng=43)
+    //user_email is the email information of this user which is also transformed by the url thorough different pages (eg: http://developer.cege.ucl.ac.uk:31265?email=leilaluooo@gmail.com)
     var postString = "title="+title +"&question_content="+question_content+"&optionA="+optionA+"&optionB="+optionB+"&optionC="+optionC+"&optionD="+optionD
     +"&optiontrueA="+TrueAnswer[0]+"&optiontrueB="+TrueAnswer[1]+"&optiontrueC="+TrueAnswer[2]+"&optiontrueD="+TrueAnswer[3]+"&lat="+lng+"&lng="+lat+"&user_email="+user_email;
     processData(postString);
@@ -63,7 +70,6 @@ function AnswerSetting() {
       var isCheckedC = document.getElementById("checkbox3").checked;
       var isCheckedD = document.getElementById("checkbox4").checked;
       var TrueAnswer = [isCheckedA,isCheckedB,isCheckedC,isCheckedD];
-      alert(TrueAnswer);
       return TrueAnswer;
     }
     
